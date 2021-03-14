@@ -1,0 +1,34 @@
+.modalSucces__container {
+    width: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: -2350px;
+    left: calc(50% - 160px);
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 1px 10px 10px 1px rgba(0, 0, 0, 0.7);
+    .modalSucces__title {
+        margin: 20px;
+        font-size: 1.6rem;
+    }
+    .modalSuccess__description {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        color: #999;
+    }
+    .modalSucces__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 50px;
+        margin: 0 auto;
+        border-radius: 28px;
+        font-size: 1.4rem;
+        text-decoration: none;
+        color: #fff;
+        background-color: $color-primary;
+    }
+    
+}

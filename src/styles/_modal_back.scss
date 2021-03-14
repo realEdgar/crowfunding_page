@@ -1,0 +1,43 @@
+.modal-back__container {
+    position: absolute;
+    top: -2300px;
+    left: calc(50% - 42.5vw);
+    width: 85vw;
+    max-width: 700px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba($color: #000000, $alpha: 0.5);
+    background-color: #fff;
+    .modalBack__button--hide {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: large;
+        font-weight: 700;
+        background-color: transparent;
+    }
+    .modal-back__title {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        letter-spacing: -1;
+    }
+    .modal-back__description {
+        margin-bottom: 30px;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        opacity: 0.7;
+    }
+}
+
+@import './article_back.scss';
+
+@media (min-width: 823px) {
+    .modal-back__container {
+        left: calc(50% - 350px);
+    }
+}

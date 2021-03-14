@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;600&display=swap');
+
+$color-primary: hsl(176, 50%, 47%);
+$color-primary-dark: hsl(176, 72%, 28%);
+$color-neutral: hsl(0, 0%, 0%);
+$color-neutral-grey: hsl(0, 0%, 48%);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    min-width: 375px;
+}
+
+.container {
+    background-color: #eceaea;
+}
+
+.fadeIn {
+    animation: fadeIn 1s forwards;
+}
+.fadeOut {
+    animation: fadeOut 1s forwards;
+}
+
+.show {
+    animation: show 100ms forwards;
+}
+.hide {
+    animation: hide 100ms forwards;
+}
+
+
+@keyframes show {
+    from {
+        top: -2300px;
+    } to {
+        top: 300px;
+    }
+}
+
+@keyframes hide {
+    from {
+        top: 300px;
+    } to {
+        top: -2300px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        top: -1000px;
+    } to {
+        top: 70px;
+    }
+}
+@keyframes fadeOut {
+    from {
+        top: 70px;
+    } to {
+        top: -1000px;
+    }
+}
+
+@import './header';
+@import './main';
+
+.border {
+    border: 2px solid $color-primary;
+}
+.letter-color {
+    color: $color-primary-dark;
+    font-weight: bold;
+}
+.display {
+    display: block;
+}
