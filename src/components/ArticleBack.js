@@ -17,7 +17,7 @@ const ArticleBack = (id, title, subtitle, description, stats, left) => {
         <div class="diploy-content" >
             <p class="diploy-content__title" >Enter your Pledge</p>
             <div class="in-out" >
-                <p class="in">$<input type="number" /></p>
+                <p class="in">$<input type="number" class=in${id} /></p>
                 <button class="out">Continue</button>
             </div>
         </div>     

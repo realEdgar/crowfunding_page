@@ -83,7 +83,7 @@ if(width <= 600) {
     valueOfDisplay = 'flex';
 }
 
-//----- Function that get to the elements interactivity  -----//
+//-----  Function that get to the elements interactivity  -----//
 function showDiploy(ev) {
     let id = parseInt(ev.target.id);    
     if(ev.target.checked === true) {
@@ -96,11 +96,10 @@ function showDiploy(ev) {
     }
 }
 
-//----- Marking the button  -----//
+//-----  Marking the button  -----//
 const $bookmark = document.getElementById('bookmark__button'); // Button bookmark
 const $span = document.querySelector('span');
 const $image = document.getElementById('img');
-console.log($span, $image)
 $bookmark.addEventListener('click', validMark);
 
 function validMark(ev) {    
@@ -112,5 +111,50 @@ function validMark(ev) {
         $span.textContent = 'Bookmarked'
         $bookmark.setAttribute('style', 'border: 2px solid hsl(176, 72%, 28%)');
         $span.setAttribute('style', 'color:hsl(176, 72%, 28%)');
+    }    
+}
+
+//-----  Adding interactivity on the "modal extention back"  -----//
+
+const $diploy_buttons = document.querySelectorAll('.out'); // Buttons 
+const $inputs = document.querySelectorAll('.in'); // Inputs Containers
+const $modal__succes = document.querySelector('.modalSucces__container'); // Modal succes
+const $diploy_inputs = []; // Empty array to the inputs 
+
+for(let i = 1; i < 4; i++) {
+    $diploy_inputs.push(document.querySelector(`.in${i}`)); // Getting inputs and adding to the empty array
+    $diploy_inputs[i-1].addEventListener('change', handleChange); // Adding events listeners to the inputs
+    $diploy_buttons[i].addEventListener('click', handleClick); // Adding events listeners to the buttons
+}
+
+// Function to handle changes on the inputs
+function handleChange() { 
+    let inputValue;
+    $diploy_inputs.forEach(input => {
+        if(input.value > 0) {
+            // Selecting the input that isn't empty
+            inputValue = input.value; 
+        }        
+    });
+    // Return the value of the input
+    return inputValue; 
+}
+
+// Function to handle click on the button
+function handleClick(ev) {
+    // Getting the value of the input
+    let value = handleChange();
+    // Condition to know if the values is higher than 0
+    if(value > 0) { 
+        // Show modal succes
+        $modal__succes.style.top = `${ev.layerY + 151.5}px`; 
+    } // Handle empty input 
+    else {
+        // Show an alert
+        alert('The imput is empty');
+        // Mark the input containere 
+        $inputs.forEach(input => {
+            input.style.border = "2px solid red"; 
+        });
     }    
 }
