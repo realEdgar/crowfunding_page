@@ -151,10 +151,10 @@ function handleClick(ev) {
     } // Handle empty input 
     else {
         // Show an alert
-        alert('The imput is empty');
+        alert('The input is empty');
         // Mark the input containere 
         $inputs.forEach(input => {
-            input.style.border = "2px solid red"; 
+            input.style.border = "2px solid #bb3434"; 
         });
     }    
 }
